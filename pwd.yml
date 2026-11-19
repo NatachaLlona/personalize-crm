@@ -133,7 +133,7 @@ services:
       - sites:/home/frappe/frappe-bench/sites
       - logs:/home/frappe/frappe-bench/logs
     ports:
-      - "8080:8080"
+      - "${PERSONALIZE_CRM_HOST:-127.0.0.1}:${PERSONALIZE_CRM_PORT:?Run start.ps1 to load public_port from config.json}:8080"
 
   queue-long:
     image: frappe/erpnext:v16.60.0
